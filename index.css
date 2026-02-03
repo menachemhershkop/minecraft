@@ -1,10 +1,13 @@
 body{
     background: #122020;
     grid-template-areas: "main" "footer";
+    
 }
 main{
     grid-area: main;
     display: grid;
+    /* grid-template-columns: repeat(35, 1fr);
+    grid-template-rows: repeat(25, 1fr); */
     grid-template-columns: repeat(25, 4%);
     grid-template-rows: repeat(25, 4%);
     width: 100%;
@@ -21,14 +24,52 @@ div:hover{
 footer{
     grid-area: footer;
     display: flex;
+    justify-content: center;
     background: #122020;
     height: 20vh;
 }
 button{
     background: #444;
+    border-radius: 30%;
 }
 button img{
     height: 3rem;
     width: 3rem;
     
+}
+.grass{
+    background: url(/img/grass1.png);
+}
+.soil{
+    background: url(/img/soil1.png)
+}
+.stone{
+    background: url(/img/Stone1.jpg);
+    color: (blue);
+}
+.wood{
+    background: url(/img/wood1.png);
+}
+.leaves{
+    background: url(/img/leaves1.png);
+}
+#stone{
+    background: url(/img/Stone1.jpg);
+    background-size: cover;
+}
+#diamond{
+    background: url(/img/diamond.png);
+    background-size: cover;
+}
+#gold{
+    background: url(/img/gold.png);
+    background-size: cover;
+}
+#redstone{
+    background: url(/img/redstone.jpeg);
+    background-size: cover;
+}
+#coal{
+    background: url(/img/coal.png);
+    background-size: cover;
 }
