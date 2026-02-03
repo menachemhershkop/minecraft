@@ -39,9 +39,11 @@ button img{
 }
 .grass{
     background: url(/img/grass1.png);
+    background-size: contain;   
 }
 .soil{
-    background: url(/img/soil1.png)
+    background: url(/img/soil1.png);
+    background-size: contain;   
 }
 .stone{
     background: url(/img/Stone1.jpg);
@@ -49,9 +51,19 @@ button img{
 }
 .wood{
     background: url(/img/wood1.png);
+    background-size: contain;   
 }
 .leaves{
     background: url(/img/leaves1.png);
+    background-size: contain;   
+}
+.monster{
+    background: url(/img/creeperBody.png);
+    background-size: contain;    
+}
+#face{
+    background: url(/img/creeperFace.png);
+    background-size: contain;
 }
 #stone{
     background: url(/img/Stone1.jpg);

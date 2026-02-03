@@ -19,6 +19,14 @@ function board(){
                     
                     board.classList = 'leaves';
                 }
+                if (i<18 && i>10 && j==20){
+                    board.classList = 'monster'
+
+                }
+                if (i==11 && j==20){
+                    board.id = 'face'
+
+                }
                 if (i==17 &&j>7){
                     board.classList = 'grass'
                     // game.appendChild(sky)
@@ -51,6 +59,10 @@ function board(){
                         board.classList = 'sky';
                     }
                     if (TOOL == 'picaxe' && board.classList == 'stone'){
+                        board.classList = 'sky'
+                        board.id = ''
+                    }
+                    if (TOOL == 'sword' && board.classList == 'monster'){
                         board.classList = 'sky'
                         board.id = ''
                     }
