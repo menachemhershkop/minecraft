@@ -85,3 +85,6 @@ button img{
     background: url(/img/coal.png);
     background-size: cover;
 }
+#box{
+    height:10rem;
+}
