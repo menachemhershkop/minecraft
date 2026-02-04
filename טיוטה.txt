@@ -1,0 +1,41 @@
+<div id="inventory"></div>
+const inventory = document.getElementById('inventory');
+board.dataset.type = board.classList[0];
+board.dataset.type = board.className;
+function collectBlock(block) {
+    const item = document.createElement('div');
+    item.className = block.dataset.type;
+    item.dataset.type = block.dataset.type;
+
+    inventory.appendChild(item);
+
+    block.className = 'sky';
+    block.dataset.type = 'sky';
+    block.id = '';
+}
+board.addEventListener('click', () => {
+    if (TOOL === 'exe' && (board.className === 'wood' || board.className === 'leaves')) {
+        collectBlock(board);
+    }
+
+    if (TOOL === 'shovel' && (board.className === 'grass' || board.className === 'soil')) {
+        collectBlock(board);
+    }
+
+    if (TOOL === 'picaxe' && board.className === 'stone') {
+        collectBlock(board);
+    }
+
+    if (TOOL === 'sword' && board.className === 'monster') {
+        collectBlock(board);
+    }
+});
+inventory.addEventListener('click', (e) => {
+    const item = e.target;
+    TOOL = item.dataset.type;
+});
+if (board.className === 'sky' && TOOL) {
+    board.className = TOOL;
+    board.dataset.type = TOOL;
+    TOOL = null;
+}
