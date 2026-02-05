@@ -59,6 +59,7 @@ function board(){
                     // console.log(x);
                     if (TOOL == 'exe' && (board.classList == 'wood'||board.classList == 'leaves') ) {
                         collectBlock(board);
+                        
                     }
                     if (TOOL == 'shovel' && (board.classList == 'grass'||board.classList == 'soil')){
                         board.classList = 'sky';
@@ -157,14 +158,16 @@ function openBox(){
         box = 'close';
     }
 }
-board.dataset.type = board.classList[0];
-board.dataset.type = board.className;
+// board.dataset.type = board.classList[0];
+// board.dataset.type = board.className;
 
 function collectBlock(block) {
     const item = document.createElement('div');
-    item.className = block.dataset.type;
+    item.className = block.type;
     item.dataset.type = block.dataset.type;
-
+    console.log(block);
+    console.log(item);
+    
     inventory.appendChild(item);
 
     block.className = 'sky';
