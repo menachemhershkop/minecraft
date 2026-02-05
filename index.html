@@ -11,14 +11,20 @@
     <main id="game">
     </main>
     <footer>
+        <div id="inventory">
+            <div id="declare">
+                <p>Start playing to have items!</p>
+            </div>
+            
+        </div>
         <nav id="tols">
-            <div ></div>
-            <img id="box" src="/img/box.png" alt="">
+            <img id="box" src="/img/box.png" alt="" onclick="openBox()">
             <button id="axe" onclick="getTool(this)"><img src="/img/axe.png" alt=""></button>
             <button id="shovel" onclick="getTool(this)"><img src="/img/shovel.png" alt=""></button>
             <button id="picaxe" onclick="getTool(this)"><img src="/img/pickaxe.png" alt=""></button>
-            <button id="sword" onclick="getTool(this)"><img src="/img/sword.png" alt=""></button>
+            <button id="sword" onclick="getTool(this)"><img src="/img/sword.png" alt=""></button>   
         </nav>
+        <button type="reset" id="reset" ><a href="index.html">reset</a></button>
     </footer>
 </body>
 </html>

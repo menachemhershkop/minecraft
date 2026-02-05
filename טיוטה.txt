@@ -39,3 +39,4 @@ if (board.className === 'sky' && TOOL) {
     board.dataset.type = TOOL;
     TOOL = null;
 }
+

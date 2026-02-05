@@ -1,5 +1,7 @@
-const game = document.getElementById("game")
+const game = document.getElementById("game");
+const inventory = document.getElementById('inventory');
 let TOOL = null;
+let box = 'close'
 function randstone(){
     const a = ['redstone','gold','stone','diamond','coal']
     return a[Math.floor(Math.random()*5)]
@@ -28,6 +30,9 @@ function board(){
 
                 }
                 if (i==17 &&j>7){
+                
+                
+                
                     board.classList = 'grass'
                     // game.appendChild(sky)
                 }
@@ -53,7 +58,7 @@ function board(){
                     const x = document.body.style.cursor
                     // console.log(x);
                     if (TOOL == 'exe' && (board.classList == 'wood'||board.classList == 'leaves') ) {
-                        board.classList = 'sky';
+                        collectBlock(board);
                     }
                     if (TOOL == 'shovel' && (board.classList == 'grass'||board.classList == 'soil')){
                         board.classList = 'sky';
@@ -84,32 +89,32 @@ function board(){
 }
 const obj = board()
 
-console.log(game.children.length);
+// console.log(game.children.length);
 
-function tree(tree, board){
-    for (let i=0; i<tree.length; i++){
-        for (let j=0; j<i.length;j++){
-            const tre = document.createElement("div");
-            if (tree[i][j] === 1 ){
-                tre.classList = 'leaves';
-            }
-            if (tree[i][j] === 2 ){
-                tre.classList = 'wood';
-            }
-            board.appendChild(tre)
-        }
-    }
-}
+// function tree(tree, board){
+//     for (let i=0; i<tree.length; i++){
+//         for (let j=0; j<i.length;j++){
+//             const tre = document.createElement("div");
+//             if (tree[i][j] === 1 ){
+//                 tre.classList = 'leaves';
+//             }
+//             if (tree[i][j] === 2 ){
+//                 tre.classList = 'wood';
+//             }
+//             board.appendChild(tre)
+//         }
+//     }
+// }
 
-const tre1=[
-            [0,0,1,0,0],
-            [0,1,1,1,0],
-            [1,1,1,1,1],
-            [0,0,2,2,0]
-            [0,0,2,2,0]
-        ]
+// const tre1=[
+//             [0,0,1,0,0],
+//             [0,1,1,1,0],
+//             [1,1,1,1,1],
+//             [0,0,2,2,0]
+//             [0,0,2,2,0]
+//         ]
 
-tree(tre1, game)
+// tree(tre1, game)
 
 
 const tols  = document.getElementById('tols');
@@ -134,9 +139,36 @@ function getTool(tool){
     }
     return tool
 }
+inventory.addEventListener('click', ()=>{
+    console.log(inventory);
+    
+})
+function openBox(){
+    console.log(123);
+    console.log(box);
+    if (box=='close'){        
+        inventory.style.display ='flex';
+        box ='open';
+    }
+    else if (box=='open'){
+        inventory.style.display = 'none';
+        console.log(inventory.style.display);
+        
+        box = 'close';
+    }
+}
+board.dataset.type = board.classList[0];
+board.dataset.type = board.className;
 
+function collectBlock(block) {
+    const item = document.createElement('div');
+    item.className = block.dataset.type;
+    item.dataset.type = block.dataset.type;
 
+    inventory.appendChild(item);
 
-
-
+    block.className = 'sky';
+    block.dataset.type = 'sky';
+    block.id = '';
+}
 
